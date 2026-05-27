@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Camera, Sparkles } from 'lucide-react';
+import heroImage from '../assets/hero.png';
 
 export default function Hero() {
     return (
@@ -44,7 +45,7 @@ export default function Hero() {
 
                 <div className="relative overflow-hidden rounded-[3rem] border border-white/10 bg-zinc-900 p-3 shadow-2xl shadow-black/50">
                     <img
-                        src="/src/assets/hero.png"
+                        src={heroImage}
                         alt="Tattoo artist portfolio preview"
                         className="h-[620px] w-full rounded-[2.45rem] object-cover opacity-90"
                     />
