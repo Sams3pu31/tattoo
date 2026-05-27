@@ -17,9 +17,9 @@ export default function StickyBooking() {
                         <p className="mt-5 leading-7 text-zinc-600">Лучше всего написать мастеру: где хочешь тату, примерный размер, стиль, бюджет и пару референсов. Этого хватит, чтобы начать.</p>
 
                         <a
-                            href="mailto:hello@example.com?subject=Tattoo%20booking"
+                            href="#booking"
                             className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-zinc-950 px-7 py-4 font-semibold text-white transition hover:scale-105">
-                            Записаться <ArrowRight size={18} />
+                            Выбрать дату <ArrowRight size={18} />
                         </a>
                     </div>
                 </div>

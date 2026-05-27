@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Camera, Sparkles } from 'lucide-react';
-import heroImage from '../assets/hero.png';
+import { ArrowRight, CalendarDays, Camera, Clock, Sparkles } from 'lucide-react';
 
 export default function Hero() {
     return (
@@ -27,10 +26,10 @@ export default function Hero() {
                     </a>
 
                     <a
-                        href="https://instagram.com"
+                        href="https://www.instagram.com/anna_inkers/"
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-4 font-semibold text-white transition hover:bg-white/10">
+                        className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-rose-500 to-violet-500 px-7 py-4 font-semibold text-white shadow-lg shadow-rose-500/25 transition hover:scale-105 hover:shadow-rose-500/40">
                         <Camera size={18} /> Instagram
                     </a>
                 </div>
@@ -45,14 +44,48 @@ export default function Hero() {
 
                 <div className="relative overflow-hidden rounded-[3rem] border border-white/10 bg-zinc-900 p-3 shadow-2xl shadow-black/50">
                     <img
-                        src={heroImage}
+                        src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=760&h=940&q=90"
                         alt="Tattoo artist portfolio preview"
                         className="h-[620px] w-full rounded-[2.45rem] object-cover opacity-90"
                     />
 
-                    <div className="absolute bottom-8 left-8 right-8 rounded-[2rem] border border-white/10 bg-black/45 p-5 backdrop-blur-xl">
-                        <p className="text-sm text-zinc-300">Свободные окна</p>
-                        <p className="mt-1 text-2xl font-bold">Июнь · Amsterdam</p>
+                    <div className="absolute inset-3 rounded-[2.45rem] bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+
+                    <div className="absolute bottom-8 left-8 right-8 rounded-[2rem] border border-white/10 bg-black/60 p-5 text-white shadow-2xl shadow-black/40 backdrop-blur-xl">
+                        <div className="mb-4 flex items-start justify-between gap-4">
+                            <div>
+                                <p className="flex items-center gap-2 text-sm text-zinc-300">
+                                    <CalendarDays size={16} /> Ближайшие свободные окна
+                                </p>
+
+                                <p className="mt-1 text-2xl font-black">Июнь · Amsterdam</p>
+                            </div>
+
+                            <span className="rounded-full bg-emerald-400/15 px-3 py-1 text-xs font-semibold text-emerald-200">есть места</span>
+                        </div>
+
+                        <div className="grid gap-2 sm:grid-cols-3">
+                            {[
+                                ['12 Jun', '11:00'],
+                                ['15 Jun', '13:30'],
+                                ['18 Jun', '16:00']
+                            ].map(([date, time]) => (
+                                <div
+                                    key={`${date}-${time}`}
+                                    className="rounded-2xl border border-white/10 bg-white/10 p-3">
+                                    <p className="text-sm font-semibold">{date}</p>
+                                    <p className="mt-1 flex items-center gap-1 text-xs text-zinc-300">
+                                        <Clock size={13} /> {time}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+
+                        <a
+                            href="#booking"
+                            className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-zinc-950 transition hover:scale-[1.02]">
+                            Выбрать дату <ArrowRight size={16} />
+                        </a>
                     </div>
                 </div>
             </motion.div>
